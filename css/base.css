@@ -80,3 +80,15 @@ section{ position: relative; z-index: 2; }
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
 }
+
+/* Global section spacing */
+section {
+  padding: 100px 0; 
+}
+
+/* Mobile global section spacing */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0; 
+  }
+}
