@@ -1,0 +1,29 @@
+/* ==========================================================
+   Work — selected project portfolio grid
+========================================================== */
+
+.work-grid{ display: grid; grid-template-columns: repeat(6, 1fr); gap: 22px; }
+.work-card{
+  position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--line);
+  grid-column: span 3; min-height: 300px; padding: 26px; display: flex;
+  flex-direction: column; justify-content: flex-end; background: var(--charcoal);
+  transition: transform .35s ease, border-color .3s ease;
+}
+.work-card.wide{ grid-column: span 4; }
+.work-card.narrow{ grid-column: span 2; }
+.work-card:hover{ transform: translateY(-6px); border-color: rgba(91,108,255,0.4); }
+.work-index{ font-family: var(--font-mono); font-size: 11px; color: var(--fog-dim); margin-bottom: 10px; }
+.work-card h3{ font-family: var(--font-display); font-weight: 600; font-size: 21px; }
+.work-card .tags{ margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+.work-card .tags span{
+  font-family: var(--font-mono); font-size: 10.5px; color: var(--fog);
+  border: 1px solid var(--line); padding: 4px 9px; border-radius: 999px;
+}
+
+@media (max-width: 900px){
+  .work-card, .work-card.wide, .work-card.narrow{ grid-column: span 6; }
+}
+
+@media (max-width: 480px){
+  .work-card{ padding: 20px; min-height: 240px; }
+}

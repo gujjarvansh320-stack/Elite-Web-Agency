@@ -1,0 +1,48 @@
+/* ==========================================================
+   Hero — headline, CTAs, meta stats row
+========================================================== */
+
+.hero{
+  position: relative; z-index: 2; min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 140px 0 100px;
+}
+
+.hero h1{
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2.2rem, 5.6vw, 4.8rem); line-height: 1.05;
+  letter-spacing: -0.02em; max-width: 17ch;
+}
+.hero h1 em{
+  font-style: normal;
+  background: linear-gradient(100deg, var(--signal), var(--signal-2), var(--signal-3));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero p{ margin-top: 26px; font-size: clamp(1rem, 1.3vw, 1.15rem); color: var(--fog); max-width: 52ch; }
+
+.hero-actions{ margin-top: 40px; display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+
+.hero-meta{
+  margin-top: 80px; display: flex; gap: 50px; flex-wrap: wrap;
+  border-top: 1px solid var(--line-soft); padding-top: 24px;
+}
+.hero-meta div{ font-family: var(--font-mono); font-size: 11.5px; color: var(--fog-dim); }
+.hero-meta strong{
+  display: block; font-family: var(--font-display); font-size: 20px; color: var(--paper);
+  font-weight: 600; margin-bottom: 4px;
+}
+
+@media (max-width: 640px){
+  .hero{ padding: 100px 0 60px; min-height: auto; }
+  .hero p{ margin-top: 18px; }
+  .hero-actions{ margin-top: 30px; gap: 12px; }
+  .hero-meta{
+    margin-top: 48px; padding-top: 20px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px 16px;
+  }
+}
+
+@media (max-width: 380px){
+  .hero-meta{ grid-template-columns: 1fr 1fr; gap: 20px 12px; }
+  .hero-meta strong{ font-size: 18px; }
+}

@@ -1,0 +1,39 @@
+/* ==========================================================
+   Design tokens — colors, type, spacing
+   Dark theme is default; light theme overrides via [data-theme]
+========================================================== */
+
+:root{
+  --ink: #0a0b0e;
+  --charcoal: #14161c;
+  --charcoal-2: #1b1e26;
+  --paper: #edeef1;
+  --fog: #9aa0ac;
+  --fog-dim: #676c78;
+  --signal: #5b6cff;
+  --signal-2: #b98cff;
+  --signal-3: #3fd1c8;
+  --line: rgba(255,255,255,0.09);
+  --line-soft: rgba(255,255,255,0.05);
+  --card-bg: rgba(255,255,255,0.02);
+  --shadow-glow: 0 10px 30px rgba(91,108,255,0.25);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --container: 1260px;
+}
+
+html[data-theme="light"]{
+  --ink: #f6f6f4;
+  --charcoal: #ffffff;
+  --charcoal-2: #f0f0ee;
+  --paper: #14161c;
+  --fog: #565b66;
+  --fog-dim: #82868f;
+  --line: rgba(10,11,14,0.1);
+  --line-soft: rgba(10,11,14,0.06);
+  --card-bg: rgba(10,11,14,0.02);
+  --shadow-glow: 0 10px 30px rgba(91,108,255,0.15);
+}

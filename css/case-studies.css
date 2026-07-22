@@ -1,0 +1,23 @@
+/* ==========================================================
+   Case studies — problem/result cards with metrics
+========================================================== */
+
+.case-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 26px; }
+.case-card{
+  border: 1px solid var(--line); border-radius: 16px; padding: 34px;
+  background: var(--card-bg); transition: border-color .25s ease;
+}
+.case-card:hover{ border-color: rgba(91,108,255,0.35); }
+.case-tag{ font-family: var(--font-mono); font-size: 11px; color: var(--signal-3); letter-spacing: 0.08em; }
+.case-card h3{ font-family: var(--font-display); font-size: 22px; font-weight: 600; margin: 14px 0 12px; }
+.case-card p{ font-size: 14px; color: var(--fog); margin-bottom: 22px; }
+.case-metrics{ display: flex; gap: 28px; flex-wrap: wrap; border-top: 1px solid var(--line-soft); padding-top: 20px; }
+.case-metrics div strong{
+  display: block; font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--paper);
+}
+.case-metrics div span{ font-family: var(--font-mono); font-size: 11px; color: var(--fog-dim); }
+
+@media (max-width: 480px){
+  .case-card{ padding: 24px; }
+  .case-metrics{ gap: 18px; }
+}

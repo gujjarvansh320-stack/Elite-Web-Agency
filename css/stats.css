@@ -1,0 +1,19 @@
+/* ==========================================================
+   Stats bar — headline numbers strip
+========================================================== */
+
+.stats-bar{
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);
+}
+.stat{ padding: 42px 30px; border-left: 1px solid var(--line-soft); }
+
+@media (max-width: 480px){
+  .stat{ padding: 24px 16px; }
+}
+.stat:first-child{ border-left: none; }
+.stat strong{
+  display: block; font-family: var(--font-display); font-size: clamp(1.7rem, 2.8vw, 2.3rem); font-weight: 700;
+  background: linear-gradient(100deg, var(--paper), var(--fog)); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.stat span{ font-family: var(--font-mono); font-size: 11.5px; color: var(--fog-dim); display: block; margin-top: 8px; }

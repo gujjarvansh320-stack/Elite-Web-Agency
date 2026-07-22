@@ -1,0 +1,41 @@
+/* ==========================================================
+   Inquiry — contact info + form panel
+========================================================== */
+
+.inquiry-panel{
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px;
+  border: 1px solid var(--line); border-radius: 20px; padding: 56px; background: var(--card-bg);
+}
+.inquiry-info h2{ font-family: var(--font-display); font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 600; margin-bottom: 18px; max-width: 16ch; }
+.inquiry-info p{ color: var(--fog); font-size: 14.5px; margin-bottom: 30px; max-width: 40ch; }
+.inquiry-contact{ font-family: var(--font-mono); font-size: 13px; display: flex; flex-direction: column; gap: 12px; }
+.inquiry-contact a{ color: var(--paper); border-bottom: 1px solid var(--line); width: fit-content; padding-bottom: 3px; transition: color .2s ease, border-color .2s ease; }
+.inquiry-contact a:hover{ color: var(--signal-2); border-color: var(--signal-2); }
+
+.form-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-field{ display: flex; flex-direction: column; gap: 8px; }
+.form-field.full{ grid-column: 1 / -1; }
+.form-field label{ font-family: var(--font-mono); font-size: 11.5px; color: var(--fog-dim); letter-spacing: 0.04em; }
+.form-field input, .form-field select, .form-field textarea{
+  background: transparent; border: 1px solid var(--line); border-radius: 10px; padding: 13px 14px;
+  color: var(--paper); font-family: var(--font-body); font-size: 14px; transition: border-color .2s ease;
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus{ outline: none; border-color: var(--signal); }
+.form-field textarea{ resize: vertical; min-height: 100px; }
+
+.form-submit{
+  margin-top: 6px; font-family: var(--font-mono); font-size: 13px; background: var(--signal);
+  color: #fff; padding: 15px 26px; border-radius: 999px; border: none; font-weight: 500;
+  transition: transform .25s ease, box-shadow .25s ease; width: fit-content;
+}
+.form-submit:hover{ transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+.form-status{ font-family: var(--font-mono); font-size: 12.5px; color: var(--signal-3); min-height: 18px; }
+
+@media (max-width: 900px){
+  .inquiry-panel{ grid-template-columns: 1fr; padding: 34px; }
+  .form-grid{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px){
+  .inquiry-panel{ padding: 22px; gap: 36px; border-radius: 16px; }
+}
