@@ -9,7 +9,7 @@ import { initMobileNav } from './nav.js';
    inquiry form handling, and the mobile hamburger nav.
 ========================================================== */
 
-// const scene = initScene('bg-canvas');
-// initTheme((theme) => scene.applyTheme(theme));
-// initInquiryForm('inquiryForm', 'formStatus');
-// initMobileNav();
+const scene = initScene('bg-canvas');
+initTheme((theme) => scene.applyTheme(theme));
+initInquiryForm('inquiryForm', 'formStatus');
+initMobileNav();
