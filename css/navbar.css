@@ -1,8 +1,8 @@
 /* ==========================================================
-   Navbar — logo, links, theme toggle, CTA
+   Navbar — logo, links, CTA
 ========================================================== */
 
-header{
+header {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
@@ -12,71 +12,81 @@ header{
   transition: background .35s ease;
 }
 
-nav{
+nav {
   display: flex; align-items: center; justify-content: space-between;
   max-width: var(--container); margin: 0 auto; padding: 0 32px;
 }
 
-.logo{
+.logo {
   font-family: var(--font-display); font-weight: 700; font-size: 17px;
   letter-spacing: 0.02em; display: flex; align-items: center; gap: 10px;
 }
-.logo-mark{
+
+.logo-mark {
   width: 10px; height: 10px; background: var(--signal); border-radius: 2px;
   box-shadow: 0 0 12px 2px var(--signal); transform: rotate(45deg); flex-shrink: 0;
 }
 
-.nav-links{ display: flex; gap: 30px; font-size: 13.5px; color: var(--fog); }
-.nav-links a{ transition: color .2s ease; }
-.nav-links a:hover{ color: var(--paper); }
+.nav-links { display: flex; gap: 30px; font-size: 13.5px; color: var(--fog); }
+.nav-links a { transition: color .2s ease; }
+.nav-links a:hover { color: var(--paper); }
 
-.nav-right{ display: flex; align-items: center; gap: 14px; }
+.nav-right { display: flex; align-items: center; gap: 14px; }
 
-.theme-toggle{
-  width: 38px; height: 38px; border-radius: 50%;
-  border: 1px solid var(--line); background: transparent;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--paper); transition: border-color .2s ease, background .2s ease;
+/* ==========================================================
+   PC VIEW ONLY: Navbar CTA Button (Pill Shape)
+========================================================== */
+@media (min-width: 861px) {
+  .nav-right .nav-cta {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #d1f4fa; /* Light icy blue */
+    color: #0b1120 !important; /* Dark text for contrast */
+    padding: 12px 28px !important;
+    border-radius: 999px !important; /* Perfect pill shape */
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 15px !important;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    border: none !important;
+  }
+
+  .nav-right .nav-cta:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(209, 244, 250, 0.2);
+  }
 }
-.theme-toggle:hover{ border-color: var(--signal); background: rgba(91,108,255,0.08); }
-.theme-toggle svg{ width: 17px; height: 17px; }
-.icon-moon{ display: none; }
-html[data-theme="light"] .icon-sun{ display: none; }
-html[data-theme="light"] .icon-moon{ display: block; }
-
-.nav-cta{
-  font-size: 12.5px; font-family: var(--font-mono); border: 1px solid var(--line);
-  padding: 9px 16px; border-radius: 999px; color: var(--paper);
-  transition: border-color .2s ease, background .2s ease;
-}
-.nav-cta:hover{ border-color: var(--signal); background: rgba(91,108,255,0.08); }
 
 /* ---------------- Hamburger toggle ---------------- */
-.menu-toggle{
+.menu-toggle {
   display: none;
   width: 38px; height: 38px; border-radius: 50%;
   border: 1px solid var(--line); background: transparent;
   align-items: center; justify-content: center;
   flex-direction: column; gap: 4px; flex-shrink: 0;
 }
-.menu-toggle span{
+.menu-toggle span {
   width: 16px; height: 2px; background: var(--paper); border-radius: 2px;
   transition: transform .25s ease, opacity .2s ease;
 }
-.menu-toggle.open span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
-.menu-toggle.open span:nth-child(2){ opacity: 0; }
-.menu-toggle.open span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+.menu-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 /* ---------------- Mobile drawer menu ---------------- */
-.menu-backdrop{
+.menu-backdrop {
   position: fixed; inset: 0; z-index: 98;
   background: rgba(0,0,0,0.5);
   opacity: 0; pointer-events: none;
   transition: opacity .3s ease;
 }
-.menu-backdrop.open{ opacity: 1; pointer-events: auto; }
+.menu-backdrop.open { opacity: 1; pointer-events: auto; }
 
-.mobile-menu{
+.mobile-menu {
   position: fixed; top: 0; right: 0; bottom: 0;
   width: 78%; max-width: 320px;
   background: var(--charcoal);
@@ -88,56 +98,40 @@ html[data-theme="light"] .icon-moon{ display: block; }
   transform: translateX(100%);
   transition: transform .35s ease;
 }
-.mobile-menu.open{ transform: translateX(0); }
-.mobile-menu ul{ display: flex; flex-direction: column; }
-.mobile-menu a{
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu ul { display: flex; flex-direction: column; }
+.mobile-menu a {
   font-family: var(--font-display); font-weight: 600; font-size: 19px;
   color: var(--paper); padding: 15px 0;
   border-bottom: 1px solid var(--line-soft);
   display: block;
 }
-.mobile-menu-cta{ margin-top: 26px; text-align: center; width: 100%; }
+.mobile-menu-cta { margin-top: 26px; text-align: center; width: 100%; }
 
-@media (max-width: 860px){
-  .nav-links{ display: none; }
-  .nav-cta{ display: none; }
-  .menu-toggle{ display: flex; }
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .menu-toggle { display: flex; }
 }
 
 /* Small phones — shrink logo/toggle so the row fits without wrapping */
-@media (max-width: 480px){
-  header{ padding: 14px 0; }
-  nav{ padding: 0 18px; flex-wrap: nowrap; }
-  .logo{ font-size: 13.5px; gap: 7px; white-space: nowrap; }
-  .logo-mark{ width: 8px; height: 8px; }
-  .nav-right{ gap: 8px; }
-  .theme-toggle, .menu-toggle{ width: 32px; height: 32px; }
-  .theme-toggle svg{ width: 15px; height: 15px; }
-  .mobile-menu{ width: 82%; padding: 90px 24px 30px; }
+@media (max-width: 480px) {
+  header { padding: 14px 0; }
+  nav { padding: 0 18px; flex-wrap: nowrap; }
+  .logo { font-size: 13.5px; gap: 7px; white-space: nowrap; }
+  .logo-mark { width: 8px; height: 8px; }
+  .nav-right { gap: 8px; }
+  .menu-toggle { width: 32px; height: 32px; flex-shrink: 0; }
+  .mobile-menu { width: 82%; padding: 90px 24px 30px; }
 }
 
-@media (max-width: 360px){
-  .logo{ font-size: 12px; }
+@media (max-width: 360px) {
+  .logo { font-size: 12px; }
 }
 
-/* Small phones — shrink logo/toggle/CTA so the row fits without wrapping */
-@media (max-width: 480px){
-  header{ padding: 14px 0; }
-  nav{ padding: 0 18px; flex-wrap: nowrap; }
-  .logo{ font-size: 13.5px; gap: 7px; white-space: nowrap; }
-  .logo-mark{ width: 8px; height: 8px; }
-  .nav-right{ gap: 8px; }
-  .theme-toggle{ width: 32px; height: 32px; flex-shrink: 0; }
-  .theme-toggle svg{ width: 15px; height: 15px; }
-  .nav-cta{ padding: 7px 12px; font-size: 11px; white-space: nowrap; }
-}
-
-@media (max-width: 360px){
-  .logo{ font-size: 12px; }
-  .nav-cta{ padding: 6px 10px; font-size: 10.5px; }
-}
-
-/* Foolproof Mobile Menu CTA Styles */
+/* ==========================================================
+   Foolproof Mobile Menu CTA Styles
+========================================================== */
 .mobile-menu .mobile-menu-cta {
   display: flex !important;
   justify-content: center;
