@@ -136,3 +136,20 @@ html[data-theme="light"] .icon-moon{ display: block; }
   .logo{ font-size: 12px; }
   .nav-cta{ padding: 6px 10px; font-size: 10.5px; }
 }
+
+/* Foolproof Mobile Menu CTA Styles */
+.mobile-menu .mobile-menu-cta {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  background-color: #4f8bc9 !important; /* Forces the blue background */
+  color: #ffffff !important; /* Forces white text */
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 20px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
