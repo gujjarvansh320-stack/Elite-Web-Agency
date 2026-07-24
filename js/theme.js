@@ -11,9 +11,9 @@ function getInitialTheme() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved === 'light' || saved === 'dark') return saved;
   } catch (e) {
-    /* storage unavailable — fall through to system preference */
+    /* storage unavailable — fall through to default */
   }
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  return 'dark';
 }
 
 export function initTheme(onThemeChange) {
