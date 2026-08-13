@@ -116,6 +116,9 @@ footer{
   display: flex; align-items: center; justify-content: center; font-size: 12px;
   font-family: var(--font-mono); transition: border-color .2s ease, color .2s ease;
 }
+
+.footer-social a svg{ width: 16px; height: 16px; }
+
 .footer-social a:hover{ border-color: var(--signal); color: var(--signal-2); }
 
 .footer-col h5{
